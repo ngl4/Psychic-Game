@@ -34,8 +34,7 @@ var computerChoices = [
 ];
 
 // Randomly chooses a choice from the options array. This is the Computer's guess.
-var computerGuess =
-  computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
 //Problem: Computer has a letter guessed before user presses the key
 
@@ -49,7 +48,28 @@ var guessLeft = 9;
 
 
 document.onkeyup = function(event) {
-  var userGuess = event.key;
+  
+    
+    var userGuessArr = [];
+
+    var userGuess = event.key;
+
+     var computerGuess =
+    computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+
+    ///????????????????????????????
+  
+    var addGuess = function (event) {
+
+    userGuessArr.push( userGuess );
+    userGuessArr.join(", ");
+    console.log( "User Guesses: " + userGuessArr.join(", ") );
+  
+    }
+
+
+    //????????????????????????????
 
   //Conditionals!!!!
 
@@ -70,16 +90,42 @@ document.onkeyup = function(event) {
   //The display will show one guess less, which is 8
   //for-loop
 
- 
+    if (userGuess === computerGuess) {
 
-    if (userGuess !== computerGuess) {
 
-        guessLeft -= 1
-        console.log(guessLeft)
-        guessLeft = document.getElementById("guess-left").innerHTML;
+        guessLeft = 9; 
+        winNum += 1;
 
+    
+
+    }else if (userGuess !== computerGuess) {
+
+        guessLeft -= 1;
+        console.log(guessLeft);
+        
+
+        if (guessLeft === 0) {
+
+            guessLeft = 9;
+            loseNum += 1;
+            
+        }
 
     }
+
+ 
+
+
+
+    var html =
+                 
+                    "<p>Wins: " + winNum + "</p>" +
+                    "<p>Losses: " + loseNum + "</p>" +
+                    "<p>Guesses Left: " + guessLeft + "</p>" +
+                    "<p>You Guesses so far: " + userGuessArr + "</p>" ;
+
+                document.querySelector("#game").innerHTML = html;
+
 
 
   //Problem: You Guesses so far
