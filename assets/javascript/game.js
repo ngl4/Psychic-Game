@@ -46,11 +46,13 @@ var winNum = 0;
 var loseNum = 0;
 var guessLeft = 9;
 
+var userGuessArr = [];
+
 
 document.onkeyup = function(event) {
   
     
-    var userGuessArr = [];
+ 
 
     var userGuess = event.key;
 
@@ -58,24 +60,18 @@ document.onkeyup = function(event) {
     computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 
-    ///????????????????????????????
-  
-    var addGuess = function (event) {
 
-    userGuessArr.push( userGuess );
-    userGuessArr.join(", ");
-    console.log( "User Guesses: " + userGuessArr.join(", ") );
-  
-    }
+    userGuessArr.push(userGuess);
+    document.getElementById("user-guess").innerHTML = userGuessArr.join(", ");
+   
 
 
-    //????????????????????????????
 
   //Conditionals!!!!
 
   //Problems: Wins
   //When the player wins, increase the Wins counter and start the game over again (without refreshing the page)
-  //
+  
 
  
 
@@ -88,13 +84,14 @@ document.onkeyup = function(event) {
   //There are only 9 guesses
   //Every time the key presess, it counts as one guess
   //The display will show one guess less, which is 8
-  //for-loop
+  
 
     if (userGuess === computerGuess) {
 
 
         guessLeft = 9; 
         winNum += 1;
+        userGuessArr = [];
 
     
 
@@ -108,24 +105,22 @@ document.onkeyup = function(event) {
 
             guessLeft = 9;
             loseNum += 1;
+            userGuessArr = [];
             
         }
 
     }
 
  
+    document.getElementById("win-num").innerHTML = winNum;
+
+    document.getElementById("lose-num").innerHTML = loseNum;
+
+    document.getElementById("guess-left").innerHTML = guessLeft;
 
 
 
-    var html =
-                 
-                    "<p>Wins: " + winNum + "</p>" +
-                    "<p>Losses: " + loseNum + "</p>" +
-                    "<p>Guesses Left: " + guessLeft + "</p>" +
-                    "<p>You Guesses so far: " + userGuessArr + "</p>" ;
-
-                document.querySelector("#game").innerHTML = html;
-
+   
 
 
   //Problem: You Guesses so far
@@ -134,6 +129,12 @@ document.onkeyup = function(event) {
   //once it reaches nine
   //Display these until the user either wins or loses
 };
+
+
+
+
+
+//Trial and Error====================================================
 
 // var guessLeft = 9;
 // var guessLeft = document.getElementById("guess-left").innerHTML;
@@ -156,3 +157,12 @@ document.onkeyup = function(event) {
 //     document.getElementById("win-num").innerHTML = winNum;
 //   }
 // }
+
+// var html =
+                 
+// "<p>Wins: " + winNum + "</p>" +
+// "<p>Losses: " + loseNum + "</p>" +
+// "<p>Guesses Left: " + guessLeft + "</p>" +
+// "<p>You Guesses so far: " + userGuessArr.join(", ") + "</p>" ;
+
+// document.querySelector("#game").innerHTML = html;
