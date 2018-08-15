@@ -112,11 +112,11 @@ document.onkeyup = function(event) {
     }
 
  
-    document.getElementById("win-num").innerHTML = winNum;
+    document.getElementById("win-num").textContent = winNum;
 
-    document.getElementById("lose-num").innerHTML = loseNum;
+    document.getElementById("lose-num").textContent = loseNum;
 
-    document.getElementById("guess-left").innerHTML = guessLeft;
+    document.getElementById("guess-left").textContent = guessLeft;
 
 
 
