@@ -1,25 +1,10 @@
 # Psychic-Game
-JavaScript Assignment: Psychic-Game
+Basic JavaScript Game: Psychic-Game
+
+The computer will randomly generated an alphabet letter. The user is going to press any key to guess the letter. There will be 9 guesses only. If the user has the correct guess, the user wins and will receive 1 point, and vice versa. 
 
 
-## Option One: Psychic Game (Basic)
+### Reflection:
+This is a game that uses basic JavaScript, such as `onkeyup` function, `Math.floor()`, `Math.random()`, `.push()`, `.join()`, `.textContent`, and `if - else if - else conditional statement`. 
 
-![Psychic](Images/1-Psychic.jpg)
-
-1. [Watch the demo](psychic-game-demo.mov).
-
-2. You're going to make a game just like the one in the video. Essentially, the app randomly picks a letter, nad the user has to guess which letter the app chose. Put the following text on your page:
-
-3. Guess what letter I'm thinking of
-
-4. Wins: (# of times the user has guessed the letter correctly)
-
-5. Losses: (# of times the user has failed to guess the letter correctly after exhausting all guesses)
-
-6. Guesses Left: (# of guesses left. This will update)
-
-7. Your Guesses So Far: (the specific letters that the user typed. Display these until the user either wins or loses.)
-
-8. When the player wins, increase the Wins counter and start the game over again (without refreshing the page).
-
-9. When the player loses, increase the Losses counter and restart the game without a page refresh (just like when the user wins).
+I have encountered different issues and had many trials and errors. Even though, it may took me slightly longer than I thought, I think it helps me to understand the concept of the variables, syntaxes, methods, and functions. 
